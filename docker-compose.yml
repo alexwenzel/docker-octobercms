@@ -1,0 +1,21 @@
+version: '3'
+services:
+  php-apache:
+    container_name: october-www
+    build: .docker/php-apache/
+    links:
+      - db
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www/html:rw
+  db:
+    container_name: october-db
+    image         : percona:latest
+    ports:
+      - "3306:3306"
+    # volumes       :
+    #     - ./database:/var/lib/mysql
+    environment:
+        - MYSQL_ROOT_PASSWORD=root
+        - MYSQL_DATABASE=october
