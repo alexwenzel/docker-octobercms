@@ -1,10 +1,11 @@
-# oc mvbb
+# docker: october cms
 
 * https://hub.docker.com/_/php/
 * https://hub.docker.com/_/mysql/
 
-build container
+## getting started
 
+build container
 ```
 docker-compose up -d [--build]
 ```
@@ -23,6 +24,9 @@ then install october cms
 ```
 php artisan o:install
 ```
+
+use the following settings:
+
 Setting | Value
 --- | ---
 MySQL Host|october-db
@@ -30,4 +34,6 @@ Database Name|october
 MySQL Login|root
 MySQL Password|root
 
-goto http://localhost:8080/
+Hello october cms :)
+
+http://localhost:8080/
