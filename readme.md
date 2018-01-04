@@ -37,3 +37,7 @@ MySQL Password|root
 Hello october cms :)
 
 http://localhost:8080/
+
+## mysql 
+
+Content from `.docker/mysql/data-dump.sql` will be imported at startup.
