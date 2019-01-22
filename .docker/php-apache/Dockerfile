@@ -40,3 +40,11 @@ RUN docker-php-ext-configure gd --with-jpeg-dir --with-freetype-dir --enable-gd-
 
 COPY php.ini /usr/local/etc/php/
 COPY . /var/www/html/
+
+# xDebug
+RUN pecl install xdebug-2.5.0 \
+    && docker-php-ext-enable xdebug
+COPY xdebug.ini /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+
+# xDebug CLI remote debug
+# RUN export PHP_IDE_CONFIG="serverName=oc-plugins"
